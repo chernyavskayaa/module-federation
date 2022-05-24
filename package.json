@@ -1,0 +1,22 @@
+{
+  "name": "module-federation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "host",
+      "libs",
+      "home",
+      "users",
+      "activity"
+    ]
+  },
+  "scripts": {
+    "start": "concurrently \"cd libs; yarn start\" \"cd home; yarn start\" \"cd users; yarn start\"  \"cd activity; yarn start\" \"cd host; yarn start\""
+  },
+  "devDependencies": {
+    "concurrently": "7.1.0"
+  }
+}
