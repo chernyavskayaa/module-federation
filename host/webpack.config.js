@@ -32,12 +32,22 @@ module.exports = {
         options: {
           presets: ['@babel/preset-react'],
         },
-      }
+      },
     ],
   },
   plugins: [
     new ModuleFederationPlugin({
       name: 'host',
+      // needs to add shared
+      //  react: {
+        // requiredVersion: peerDependencies.react,
+      // },
+      // 'react-dom': {
+        // requiredVersion: peerDependencies['react-dom'],
+      // },
+      // 'react-router-dom': {
+        // requiredVersion: dependencies['react-router-dom'],
+      // },
       remotes: {
         home: 'home@[homeUrl]/remoteEntry.js',
         users: 'users@[usersUrl]/remoteEntry.js',
